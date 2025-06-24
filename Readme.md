@@ -1,10 +1,15 @@
-Terraform
+![ec2](ec2.png "study thema")
+
+# Terraform
 https://developer.hashicorp.com/terraform/install
 
+```
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update && sudo apt install terraform
-
+```
+Terraform install
+```
 brew install tfenv
 tfenv list-remote
 tfenv install 1.10.5
@@ -14,7 +19,9 @@ tfenv pin
 
 terraform -v
 terraform fmt --recursive
-
+```
+tflint install
+```
 brew install tflint
 touch .tflint.hcl
 
@@ -30,10 +37,15 @@ plugin "aws" {
 
 tflint --init
 tflint --recursive
-
+```
+trivy install
+```
 brew install trivy
 trivy config .
+```
 
+terraform deploy
+```
 cd ./envs/dev
 
 terraform init
@@ -46,15 +58,15 @@ terraform init --upgrade
 terraform.tfvarsファイルを作成して
 resourceName = "user"
 specificAddress = "x.x.x.x/32" 許可したいIp
-
+```
 -----
-コマンド補完を有効にする
+# コマンド補完を有効にする
 https://docs.aws.amazon.com/ja_jp/cli/v1/userguide/cli-configure-completion.html
 
 complete -C '/usr/local/bin/aws_completer' aws
 
 -----
-フォルダ構成
+# フォルダ構成
 envs
   dev
     main.tf
